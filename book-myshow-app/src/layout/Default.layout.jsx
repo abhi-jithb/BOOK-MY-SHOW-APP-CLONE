@@ -1,13 +1,17 @@
-import React from 'react'
+// rafce
+import React from "react";
+import Navbar from "../components/Navbar/Navbar.Component";
 
-const DefaultLayout = 
-(Component) =>
-({...props}) => {
-  return (
-    <div>
+const DefaultLayoutHoc =
+  (Component) =>
+  ({ ...props }) => {
+    return (
+      <div>
         <Navbar />
-        <Component {...props} /></div>
-  )
-}
+        <Component {...props} />
+        <div>Footer</div>
+      </div>
+    );
+  };
 
-export default DefaultLayout
+export default DefaultLayoutHoc;

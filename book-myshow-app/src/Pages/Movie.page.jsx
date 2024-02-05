@@ -1,4 +1,6 @@
 import React from 'react'
+import MovieLayoutHoc from "../layout/Default.layout";
+
 
 const MoviePage = () => {
   return (
@@ -6,4 +8,4 @@ const MoviePage = () => {
   )
 }
 
-export default MoviePage
+export default MovieLayoutHoc(MoviePage);
