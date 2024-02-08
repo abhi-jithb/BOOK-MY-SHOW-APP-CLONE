@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+/* *{
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+div{
+  background-color: #0000;
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
