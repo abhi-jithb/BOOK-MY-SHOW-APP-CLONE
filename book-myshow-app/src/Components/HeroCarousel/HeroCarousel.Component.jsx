@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import HeroSlider from "react-slick";
+// import { NextArrow, PrevArrow } from "./Arrows.Components";
 
 const HeroCarousel = () => {
-  const [images, setImages]=useState([
+  const [images, setImages] = useState([
     {
       adult: false,
       backdrop_path: "/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
@@ -36,55 +37,68 @@ const HeroCarousel = () => {
       video: false,
       vote_average: 7.4,
       vote_count: 346,
-    }
+    },
   ]);
 
   const settingsLG = {
-    arrows : true,
-    slidesToShow: 1, 
-    infinite:true,
+    dots: true,
+    arrows: true,
+    slidesToShow: 1,
+    infinite: true,
     speed: 500,
     slideToScroll: 1,
-  }
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+  };
   const settings = {
-    arrows : true,
-    slidesToShow: 1, 
-    infinite:true,
+    dots: true,
+    arrows: true,
+    slidesToShow: 1,
+    infinite: true,
     speed: 500,
     slideToScroll: 1,
-  }
-    return <>
-    <div className='lg:hidden'>
-       <HeroSlider {...settings}>
-       {
-        images.map((image) =>{
-          <div className='w-full h-96 px-2 placeholder:py-3'>
-            <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} 
-            alt="Hero Banner" 
-            className='w-full h-full rounded-md object-cover' />
-          </div>
-        })
-       }
-       </HeroSlider>
-    </div>
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+  };
 
+  return (
+    <>
+      <div className="lg:hidden">
+        <HeroSlider {...settings}>
+          {images.map((image, index) => {
+            <div className="w-full h-56 md:h-80 py-3" key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
+                alt="Hero Banner"
+                className="w-full h-full rounded-md object-cover"
+              />
+            </div>;
+          })}
+        </HeroSlider>
+      </div>
+      <div className="hidden lg:block">
+        <HeroSlider {...settingsLG}>
+          {images.map((image, index) => {
+            <div className="w-full h-96 px-2 py-3" key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
+                alt="Hero Banner"
+                className="w-full h-full rounded-md object-cover"
+              />
+            </div>;
+          })}
+        </HeroSlider>
+      </div>
+    </>
+  );
+};
 
-    <div className='hidden lg:block'>
-    <HeroSlider {...settingsLG}> 
-       {
-        images.map((image) =>{
-          <div className='w-full h-6 md:h-80 py-3'>
-            <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} 
-            alt="Hero Banner" 
-            className='w-full h-full rounded-md object-cover' />
-          </div>
-        })
-       }
-       </HeroSlider>
-    </div>
-    
-  </>
-  
-}
-
-export default HeroCarousel
+export default HeroCarousel;
