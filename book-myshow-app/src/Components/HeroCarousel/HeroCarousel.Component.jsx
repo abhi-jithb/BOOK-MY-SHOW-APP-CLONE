@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HeroSlider from "react-slick";
-// import { NextArrow, PrevArrow } from "./Arrows.Components";
+import { NextArrow, PrevArrow } from "./Arrows.Component";
 
 const HeroCarousel = () => {
   const [images, setImages] = useState([
@@ -51,8 +51,8 @@ const HeroCarousel = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   const settings = {
     dots: true,
@@ -65,16 +65,16 @@ const HeroCarousel = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
     <>
       <div className="lg:hidden">
         <HeroSlider {...settings}>
-          {images.map((image, index) => {
-            <div className="w-full h-56 md:h-80 py-3" key={index}>
+          {images.map((image) => {
+            <div className="w-full h-56 md:h-80 py-3">
               <img
                 src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"
@@ -86,8 +86,8 @@ const HeroCarousel = () => {
       </div>
       <div className="hidden lg:block">
         <HeroSlider {...settingsLG}>
-          {images.map((image, index) => {
-            <div className="w-full h-96 px-2 py-3" key={index}>
+          {images.map((image) => {
+            <div className="w-full h-96 px-2 py-3">
               <img
                 src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"

@@ -4,8 +4,9 @@ import React, { useState } from 'react'
 import DefaultLayoutHoc from '../layout/Default.layout';
 
 // Components
-import EntertainmentCardSlider from '../Components/Entertainment/EntertainmentCardComponent';
 import HeroCarousel from '../Components/HeroCarousel/HeroCarousel.Component';
+import EntertainmentCardSlider from '../Components/Entertainment/EntertainmentCardComponent';
+// import HeroCarousel from '../Components/HeroCarousel/HeroCarousel.Component';
 import PosterSlider from '../Components/PosterSlider/PosterSlider.Component';
 
 
@@ -18,10 +19,11 @@ const HomePage = () => {
     <HeroCarousel />
 
     <div className='container mx-auto px-4 md:px-12 my-8'>
-     <h1 className='text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3'>Recommended Movies</h1>
+     <h1 className='text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3'>
+      The Best of Entertainment
+      </h1>
 
      <EntertainmentCardSlider />
-    
     </div>
 
     <div className='container mx-auto px-4 md:px-12 my-8 '>
@@ -61,4 +63,4 @@ const HomePage = () => {
 
 }
 
-export default DefaultLayoutHoc(HomePage)
+export default DefaultLayoutHoc(HomePage);

@@ -2,9 +2,8 @@ import './App.css';
 // Router
 import {Routes,Route} from "react-router-dom"
 // React Slick
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 // Pages
 import HomePage from './pages/Home.page';
 import MoviePage from './pages/Movie.page';
