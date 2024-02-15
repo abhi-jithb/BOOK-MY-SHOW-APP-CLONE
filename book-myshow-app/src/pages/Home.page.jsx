@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios' 
 
 // // Layout Hoc
 import DefaultLayoutHoc from '../layout/Default.layout';
@@ -14,6 +15,34 @@ const HomePage = () => {
     const [recommendedMovies, setRecommendedMovies] = useState([]);
     const [premierMovies, setPremierMovies] = useState([]);
     const [onlineStreamingEvents, setOnlineStreamingEvents] = useState([]);
+
+
+  // get.apiName('/', async ()=>{})
+  useEffect(() => {
+    const requestTopRatedMovies = async () => {
+      const  getTopRatedMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=569d567eb68d8a2d49b5cf0bf61aa398"
+      );
+      // ccfa4ecd270cd9e26cc5791a495b5aca
+      setRecommendedMovies(getTopRatedMovies.data.results);
+    };
+    requestTopRatedMovies();
+  }, []);
+
+  // premiere  moviesa api setting
+  useEffect(() => {
+    const requestPremiumMovies = async () => {
+      const  getPremiumMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/upcoming?api_key=569d567eb68d8a2d49b5cf0bf61aa398"
+      );
+      // https://api.themoviedb.org/3/movie/upcoming
+
+      // ccfa4ecd270cd9e26cc5791a495b5aca
+      setPremierMovies(getPremiumMovies.data.results);
+    };
+    requestPremiumMovies();
+  }, []);
+
   return <>
 
     <HeroCarousel />

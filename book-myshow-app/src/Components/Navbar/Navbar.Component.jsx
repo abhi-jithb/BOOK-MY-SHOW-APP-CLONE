@@ -61,19 +61,44 @@ function NavLg() {
 }
 
 // Main Component
+// const Navbar = () => {
+//   return (
+//     <nav className="bg-darkBackground-700 px-4 py-3">
+//     {/* Small Screen Navbar */}
+//     <div className="md:hidden "><NavSm/></div>
+
+//     {/* Medium Screen Navbar */}
+//     <div className="hidden md:flex lg:hidden"> <NavMd /> </div>
+
+//     {/* Large Screen Navbar */}
+//     <div className="hidden lg:flex md:hidden"> <NavLg /> </div>
+//     </nav>
+//   )
+// };
+
+// Main Component
 const Navbar = () => {
   return (
     <nav className="bg-darkBackground-700 px-4 py-3">
-    {/* Small Screen Navbar */}
-    <div className="md:hidden "><NavSm/></div>
+      {/* Small Screen NavBar */}
+      {/* >= md its hidden, only visible on small screen size */}
+      <div className="md:hidden">
+        {/* <div className="sm:flex md:hidden lg:hidden"> */}
+        <NavSm />
+      </div>
 
-    {/* Medium Screen Navbar */}
-    <div className="hidden md:flex lg:hidden"> <NavMd /> </div>
+      {/* Medium Screen Size */}
+      <div className="hidden md:flex lg:hidden">
+        <NavMd />
+      </div>
 
-    {/* Large Screen Navbar */}
-    <div className="hidden lg:flex md:hidden"> <NavLg /> </div>
+      {/* Large Screen Size */}
+      <div className="hidden md:hidden lg:flex">
+        <NavLg />
+      </div>
     </nav>
-  )
+  );
 };
+
 
 export default Navbar;

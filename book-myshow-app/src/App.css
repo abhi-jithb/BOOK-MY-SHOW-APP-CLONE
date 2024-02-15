@@ -1,12 +1,16 @@
-.App {
+/* .App {
   text-align: center;
 }
-/* *{
+*{
 -webkit-tap-highlight-color:rgba(0,0,0,0);
+} */
+/* added to view arrows */
+/* body{
+  background-color: #efefef;
 }
 div{
   background-color: #0000;
-} */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -43,4 +47,4 @@ div{
 }
 PosterSlider{
   background-color: #282c34;
-}
+} */
