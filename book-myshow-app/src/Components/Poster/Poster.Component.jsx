@@ -19,11 +19,11 @@ const Poster = (props) => {
         >
           {props.title}
         </h3>
-        {/* <p>{props.subtitle}</p> */}
+     
       </div>
     </Link>
   );
-  // return <div>{props.original_title}</div>;
+  
 };
 
 export default Poster;
